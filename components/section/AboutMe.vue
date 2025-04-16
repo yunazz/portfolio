@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <section>aboutme</section>
+  <section>3</section>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+section {
+  background: var(--color-white);
+}
+</style>

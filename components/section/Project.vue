@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section>Project</section>
+  <div class="section-page"></div>
 </template>
 
 <style lang="css" scoped></style>

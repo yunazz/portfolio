@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section>Contact</section>
+  <section>6</section>
 </template>
 
 <style lang="css" scoped></style>

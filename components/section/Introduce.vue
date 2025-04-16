@@ -1,7 +1,11 @@
 <script setup></script>
 
 <template>
-  <section>Introduce</section>
+  <section>2</section>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+section {
+  background: white;
+}
+</style>

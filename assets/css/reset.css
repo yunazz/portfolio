@@ -3,9 +3,9 @@ html,
 body {
   margin: 0;
   padding: 0;
-  /* height: 100%; */
   overflow-x: auto;
   font-size: var(--font-size);
+  scroll-behavior: smooth;
 }
 html,
 body,
@@ -103,6 +103,8 @@ listing {
   outline: 0;
   font-family: 'Noto Sans KR', 'Malgun Gothic', dotum, 'Helvetica Neue',
     Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 ul,
 ol {

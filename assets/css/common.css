@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+:root {
+  --color-yellow: #fedc01;
+  --color-black: #000;
+  --color-white: #fff;
+
+  --border-color: rgba(0, 0, 0, 0.12);
+
+  --title-size-xl: 180px;
+  --title-size-l: 32px;
+  --title-size-m: 1.25rem;
+  --title-size-s: 0.9375rem;
+
+  --body-size-l: 1.125rem;
+  --body-size-m: 0.875rem;
+  --body-size-s: 0.75rem;
+}
+.inter-400 {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.inter-800 {
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.text-yellow {
+  color: var(--color-white) !important;
+}
+.text-white {
+  color: var(--color-white) !important;
+}
+.title-xl {
+  font-size: var(--title-size-xl);
+}
+.title-l {
+  font-size: var(--title-size-l);
+}
+.title-m {
+  font-size: var(--title-size-m);
+}
+.title-s {
+  font-size: var(--title-size-s);
+}
+.body-l {
+  font-size: var(--body-size-l);
+}
+.body-m {
+  font-size: var(--body-size-m);
+}
+.body-s {
+  font-size: var(--body-size-s);
+}
+.fw-400 {
+  font-weight: 400;
+}
+.fw-500 {
+  font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fw-800 {
+  font-weight: 800;
+}
+.fw-900 {
+  font-weight: 900;
+}

@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section>Interview</section>
+  <section>5</section>
 </template>
 
 <style lang="css" scoped></style>
