@@ -160,6 +160,6 @@ img {
   background-color: #3f3c41;
 }
 ::selection {
-  background: rgba(120, 74, 171, 0.95);
-  color: #ffffff;
+  background: var(--color-yellow);
+  color: black;
 }

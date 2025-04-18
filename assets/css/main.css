@@ -1,12 +1,11 @@
-.wrapper {
-  min-width: 1280px;
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
-header {
-  position: fixed;
-  width: 100vw;
-  display: flex;
-  justify-content: space-between;
-  height: 0;
+html::-webkit-scrollbar {
+  display: none;
+}
+.wrapper {
   min-width: 1280px;
 }
 .page-title {
@@ -37,10 +36,11 @@ header {
   display: block;
   overflow-x: hidden;
   height: 100vh;
+  max-height: 2000px;
   overflow-y: scroll;
-  /* scroll-snap-type: y proximity; */
-
   /* overscroll-behavior: contain; */
+}
+.section-container section:not(:first-of-type) {
 }
 .section-snap {
   min-height: 100vh;

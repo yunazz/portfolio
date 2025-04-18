@@ -8,7 +8,7 @@
         <p class="title-xl inter-800">
           FRONT END FRONT END FRONT END FRONT END
         </p>
-        <p class="title-l">
+        <p class="title-m">
           <span>
             <b>#프론트엔드</b>
             <b>#문제를 해결하는 개발자</b>
@@ -23,7 +23,7 @@
         <p class="title-xl inter-800">
           DEVELOPER DEVELOPER DEVELOPER DEVELOPER
         </p>
-        <div class="me-image">
+        <div class="image-me">
           <NuxtImg src="/image/profile.png" />
         </div>
       </div>
@@ -59,16 +59,14 @@ section {
   align-items: center;
   border-radius: 320px;
 }
-.me-image {
+.image-me {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translate(-50%, 10%);
+  transform: translate(-48%, 10%);
 }
-.me-image img {
-  /* width: 30vw; */
-  max-width: 16vw;
-  min-width: 280px;
+.image-me img {
+  width: 310px;
 }
 .mask-text {
   position: relative;
@@ -87,7 +85,7 @@ section {
 .mask-text .title-xl:last-of-type {
   transform: translateX(60px);
 }
-.mask-text .title-l {
+.mask-text .title-m {
   display: flex;
   justify-content: space-between;
   color: var(--color-black);
@@ -100,20 +98,20 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.mask-text > .title-l span {
+.mask-text > .title-m span {
   display: flex;
   justify-content: space-around;
   width: 36%;
   min-width: 510px;
 }
-.mask-text > .title-l span:first-of-type {
+.mask-text > .title-m span:first-of-type {
   padding-left: 20px;
   min-width: 560px;
 }
-.mask-text > .title-l span:last-of-type {
+.mask-text > .title-m span:last-of-type {
   padding-right: 20px;
 }
-.mask-text > .title-l span b {
+.mask-text > .title-m span b {
   font-weight: 700;
 }
 </style>
