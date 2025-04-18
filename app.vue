@@ -1,7 +1,7 @@
 <script setup>
 const containerRef = ref(null);
 const stickyMode = ref(true);
-const sectionGap = 50;
+
 function handleScroll() {
   const scrollTop = containerRef.value.scrollTop;
   const sectionHeight = window.innerHeight > 832 ? window.innerHeight : 832;
@@ -24,7 +24,7 @@ function handleScroll() {
           class="section-snap"
           :class="{ sticky: stickyMode }"
         />
-        <SectionIntroduce id="Introduce" class="section-snap" />
+        <SectionIntroduce id="Introduce" class="section-snap" style="" />
         <div class="section-gap">
           <SectionAboutMe id="AboutMe" class="section-snap" />
           <SectionProject id="Project" class="section-snap" />
@@ -42,7 +42,7 @@ function handleScroll() {
   top: 0;
 }
 .section-gap {
-  padding-top: 120px;
+  padding-top: 80px;
   background: white;
 }
 #home {

@@ -58,7 +58,7 @@
 section {
   background: white;
   align-items: flex-start;
-  padding-top: 4.5%;
+  padding-top: 64px;
   position: relative;
 }
 .speech-bubble {

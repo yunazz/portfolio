@@ -105,7 +105,6 @@
 
 <style lang="css" scoped>
 section {
-  border-top: 1px solid black;
   background: var(--color-white);
 }
 .section-inner {
