@@ -1,20 +1,19 @@
-<!-- eslint-disable vue/html-self-closing -->
 <script setup></script>
 
 <template>
   <section>
     <div class="text-center">
       <div class="introduce-title">
-        <div class="speech-bubble m-auto not-draggable">
+        <div class="speech-bubble m-auto not-draggable observe-fade-in">
           <p class="title-s">호기심으로 시작해, 꾸준함으로 성장해온</p>
           <h5 class="title-m">프론트엔드 개발자 <b>박유나</b>입니다.</h5>
         </div>
-        <div class="memoticon">
-          <img src="/assets/image/memoticon.png" alt="" />
+        <div class="memoticon observe-fade-in">
+          <img src="/assets/image/memoticon.png" alt="memoticon" />
         </div>
       </div>
       <div class="introduce-text not-draggable">
-        <p class="flex-column body-l">
+        <p class="flex-column body-l observe-fade-in">
           <span>
             <b class="highlight-hover">디자인</b>과
             <b class="highlight-hover">UX</b>에 대한 관심으로
@@ -33,7 +32,7 @@
             폭을 넓히고 있습니다.</span
           >
         </p>
-        <p class="flex-column body-l">
+        <p class="flex-column body-l observe-fade-in">
           <span>
             개발 과정에서는 <b class="highlight-hover">효율적인 </b> 자원 배분과
             <b class="highlight-hover">책임감</b> 있는 태도를 중요하게 생각하며
@@ -44,7 +43,7 @@
             과정을 소중히 여깁니다.
           </span>
         </p>
-        <p class="body-l">
+        <p class="body-l observe-fade-in">
           <span> "꾸준히 배우고, 자라고, 함께 만들어가는 사람. </span>
           <br />
           <span> 그게 제가 되고 싶은 개발자의 모습입니다."</span>
@@ -58,8 +57,9 @@
 section {
   background: white;
   align-items: flex-start;
-  padding-top: 64px;
+  padding-top: 80px;
   position: relative;
+  overflow-y: hidden;
 }
 .speech-bubble {
   position: relative;
@@ -135,5 +135,21 @@ section {
   border-bottom: 2px dotted;
   line-height: 1.8;
   font-weight: 500;
+}
+/* 애니메이션 딜레이 */
+.speech-bubble {
+  animation-delay: 0.1s;
+}
+.memoticon {
+  transition-delay: 0.2s;
+}
+.introduce-text p:nth-of-type(1) {
+  transition-delay: 0.25s;
+}
+.introduce-text p:nth-of-type(2) {
+  transition-delay: 0.28s;
+}
+.introduce-text p:nth-of-type(3) {
+  transition-delay: 0.31s;
 }
 </style>

@@ -8,4 +8,5 @@ export default defineNuxtConfig({
     '~/assets/css/common.css',
     '~/assets/css/main.css',
   ],
+  plugins: ['~/plugins/observe-visibility.js'],
 });

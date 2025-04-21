@@ -8,6 +8,13 @@ html::-webkit-scrollbar {
 .wrapper {
   min-width: 1280px;
 }
+.section-inner {
+  display: flex;
+  margin: 0 auto;
+  width: 1280px;
+  padding: 0 32px;
+  margin: 0 auto;
+}
 .page-title {
   position: absolute;
   top: 10px;
@@ -38,9 +45,6 @@ html::-webkit-scrollbar {
   height: 100vh;
   max-height: 2000px;
   overflow-y: scroll;
-  /* overscroll-behavior: contain; */
-}
-.section-container section:not(:first-of-type) {
 }
 .section-snap {
   min-height: 100vh;
@@ -51,27 +55,86 @@ html::-webkit-scrollbar {
   font-size: 2rem;
   overflow-x: hidden;
 }
-.section-page {
-  display: block;
-  width: 100vw;
-  height: 100%;
-  min-height: 832px;
-}
-/* #Project {
+#Project {
   background: var(--color-yellow);
-} */
-/* /* #Introduce {
-  background: orange;
-} */
-#AboutMe {
 }
 #Interview {
-}
-#Contact {
+  align-items: flex-start;
 }
 .wrapper.bg--yellow .page-title {
   color: var(--color-white);
 }
 .wrapper.bg--yellow .pagination-dot.active {
   background: var(--color-white);
+}
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+.fade-in-up {
+  animation: fadeIn1 1s forwards;
+}
+.fade-in-left {
+  animation: fadeIn2 1s forwards;
+}
+.fade-in-right {
+  animation: fadeIn3 1s forwards;
+}
+
+@keyframes bounce {
+  0%,
+  to {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@keyframes fadeIn1 {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn2 {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn3 {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.observe-fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -5,8 +5,7 @@ const stickyMode = ref(true);
 function handleScroll() {
   const scrollTop = containerRef.value.scrollTop;
   const sectionHeight = window.innerHeight > 832 ? window.innerHeight : 832;
-  const stickyPoint = sectionHeight * 1.5;
-
+  const stickyPoint = sectionHeight * 1.2;
   stickyMode.value = scrollTop < stickyPoint;
 }
 </script>
@@ -14,22 +13,18 @@ function handleScroll() {
 <template>
   <div>
     <div class="wrapper">
-      <div
-        ref="containerRef"
-        class="section-container snap"
-        @scroll="handleScroll"
-      >
+      <div ref="containerRef" class="section-container" @scroll="handleScroll">
         <SectionHome
           id="home"
           class="section-snap"
           :class="{ sticky: stickyMode }"
         />
-        <SectionIntroduce id="Introduce" class="section-snap" style="" />
+        <SectionIntroduce id="Introduce" class="section-snap" />
         <div class="section-gap">
           <SectionAboutMe id="AboutMe" class="section-snap" />
           <SectionProject id="Project" class="section-snap" />
           <SectionInterview id="Interview" class="section-snap" />
-          <SectionContact id="Contact" class="section-snap" />
+          <SectionThankyou id="Thankyou" class="section-snap" />
         </div>
       </div>
     </div>
@@ -42,7 +37,7 @@ function handleScroll() {
   top: 0;
 }
 .section-gap {
-  padding-top: 80px;
+  padding-top: 120px;
   background: white;
 }
 #home {

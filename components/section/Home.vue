@@ -9,11 +9,11 @@
           FRONT END FRONT END FRONT END FRONT END
         </p>
         <p class="title-m">
-          <span>
+          <span class="fade-in-right">
             <b>#프론트엔드</b>
             <b>#문제를 해결하는 개발자</b>
           </span>
-          <span>
+          <span class="fade-in-left">
             <b>#웹퍼블리싱</b>
             <b>#백엔드</b>
             <b>#AI</b>
@@ -24,9 +24,12 @@
           DEVELOPER DEVELOPER DEVELOPER DEVELOPER
         </p>
         <div class="image-me">
-          <NuxtImg src="/image/profile.png" />
+          <NuxtImg class="fade-in-up" src="/image/profile.png" />
         </div>
       </div>
+    </div>
+    <div class="arrow-down animate-bounce">
+      <img src="/assets/image/arrowdown.png" alt="" />
     </div>
   </section>
 </template>
@@ -38,12 +41,13 @@
   left: 20px;
   color: var(--color-yellow);
   font-size: 24px;
+  font-weight: 800;
 }
 section {
   width: 100%;
   min-height: 832px;
   height: 100vh;
-  background: black;
+  background: var(--color-black);
   border-bottom: 1px solid;
   z-index: -1;
 }
@@ -58,7 +62,9 @@ section {
   justify-content: center;
   align-items: center;
   border-radius: 320px;
+  translate: all 0.5s ease;
 }
+
 .image-me {
   position: absolute;
   bottom: 0;
@@ -113,5 +119,20 @@ section {
 }
 .mask-text > .title-m span b {
   font-weight: 700;
+}
+.arrow-down {
+  position: relative;
+  bottom: 12px;
+}
+.arrow-down img {
+  width: 30px;
+}
+.sticky .arrow-down {
+  position: absolute;
+}
+/* 애니메이션 */
+.image-me img {
+  opacity: 0;
+  animation-delay: 0.3s;
 }
 </style>

@@ -3,7 +3,7 @@
 <template>
   <section>
     <div class="section-inner">
-      <div class="profile flex-column not-draggable">
+      <div class="profile flex-column not-draggable observe-fade-in">
         <p class="fw-700">박유나</p>
         <p class="inter-600 mb-3">PARK YUNA</p>
         <p class="flex-column body-m">
@@ -14,14 +14,14 @@
       </div>
       <div class="profile-detail flex not-draggable">
         <div class="flex-column">
-          <div>
+          <div class="observe-fade-in">
             <p class="inter-700 mb-3">Education</p>
             <ul>
               <li>2016.02 인하공업전문대학 항공운항과 졸업</li>
               <li>2020.02 감리교신학대학교 기독교교육학 졸업</li>
             </ul>
           </div>
-          <div>
+          <div class="observe-fade-in">
             <p class="inter-700 mb-3">Training</p>
             <ul>
               <li class="flex-column">
@@ -61,39 +61,42 @@
           </div>
         </div>
         <div class="flex-column">
-          <div>
+          <div class="observe-fade-in">
             <p class="inter-700 mb-3">Certificates</p>
             <ul>
               <li>2020.06 GTQ 포토샵 1급</li>
               <li>2022.06 정보처리기사</li>
             </ul>
           </div>
-          <div>
+          <div class="observe-fade-in">
             <p class="inter-700 mb-3">Skills</p>
             <ul>
               <li>
                 <p class="fw-600">협업툴</p>
-                <span>svn, 깃헙, 노션, 지라, 슬랙</span>
+                <span>SVN, Github, Notion, Jira, Slack</span>
               </li>
               <li>
                 <p class="fw-600">디자인</p>
-                <span>figma, sketch, ps, ai, pr, af, 블렌더</span>
+                <span
+                  >Sketch, Figma, 포토샵, 일러스트레이터, 프리미어프로,<br />
+                  에프터이펙트, 블렌더</span
+                >
               </li>
               <li>
                 <p class="fw-600">프론트엔드 개발</p>
-                <span>html, css, js, vue, nuxt, react</span>
+                <span>HTML, CSS, Javascript, Vue, Nuxt, React, PWA</span>
               </li>
               <li>
                 <p class="fw-600">백엔드 개발</p>
-                <span>nodejs, fastapi, 장고, sql</span>
+                <span>Nodejs, Express, Django, Fastapi, SQL</span>
               </li>
               <li>
                 <p class="fw-600">Devops</p>
-                <span>깃엑션, aws, 리눅스, docker</span>
+                <span>리눅스, Docker, AWS</span>
               </li>
               <li>
                 <p class="fw-600">AI</p>
-                <span>python, langchain</span>
+                <span>Python, Langchain</span>
               </li>
             </ul>
           </div>
@@ -107,17 +110,9 @@
 section {
   background: var(--color-white);
 }
-.section-inner {
-  display: flex;
-  margin: 0 auto;
-  width: 1280px;
-  padding: 0 60px;
-  margin: 0 auto;
-}
 .profile {
   flex: 0 0 270px;
 }
-
 .profile p:nth-of-type(1) {
   font-size: 30px;
 }
@@ -150,5 +145,13 @@ section {
 }
 .profile-detail .date {
   color: #7e7e7e;
+}
+.profile-detail > div.flex-column:first-of-type div:first-of-type,
+.profile-detail > div.flex-column:last-of-type div:first-of-type {
+  transition-delay: 0.3s;
+}
+.profile-detail > div.flex-column:first-of-type div:last-of-type,
+.profile-detail > div.flex-column:last-of-type div:last-of-type {
+  transition-delay: 0.4s;
 }
 </style>
