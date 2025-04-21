@@ -5,17 +5,17 @@ const githubUrl = ref('https://github.com/yunazz');
 <template>
   <section>
     <div class="flex-column text-center">
-      <p class="flex-column body-l observe-fade-in not-draggable">
+      <p class="flex-column body-l not-draggable observe-fade-in">
         <span>
           익숙함에 <b>안주하지 않고</b>, 낯선 기술과 문제 앞에서도
           <b>한 걸음씩 나아가며</b>
         </span>
         <span>더 나은 서비스와 함께 <b>성장하는 개발자</b>가 되겠습니다.</span>
       </p>
-      <p class="title-l inter-700 observe-fade-in not-draggable">
+      <p class="title-l inter-700 not-draggable observe-fade-in">
         <span>Thank you.</span>
       </p>
-      <div class="contact">
+      <div class="contact observe-fade-in">
         <a :href="githubUrl" target="_blank">
           <img src="/assets/image/logo-github-w.png" />
         </a>

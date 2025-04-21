@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+const githubUrl = ref('https://github.com/yunazz');
+</script>
 
 <template>
   <section>
@@ -11,6 +13,9 @@
           <span>010-4470-5117</span>
           <span>yunaz0402@gmail.com</span>
         </p>
+        <a :href="githubUrl" target="_blank">
+          <img src="/assets/image/logo-github.png" class="contact-logo" />
+        </a>
       </div>
       <div class="profile-detail flex not-draggable">
         <div class="flex-column">
@@ -153,5 +158,9 @@ section {
 .profile-detail > div.flex-column:first-of-type div:last-of-type,
 .profile-detail > div.flex-column:last-of-type div:last-of-type {
   transition-delay: 0.4s;
+}
+.contact-logo {
+  width: 34px;
+  margin-top: 18px;
 }
 </style>
