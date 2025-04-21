@@ -67,6 +67,10 @@ html::-webkit-scrollbar {
 .wrapper.bg--yellow .pagination-dot.active {
   background: var(--color-white);
 }
+.project-description u {
+  font-weight: 500;
+}
+
 .animate-bounce {
   animation: bounce 1s infinite;
 }
