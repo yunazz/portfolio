@@ -127,7 +127,6 @@ section {
   background: var(--color-white);
   min-height: 832px;
 }
-
 .profile p:nth-of-type(1) {
   font-size: 30px;
 }

@@ -96,8 +96,7 @@ const projects = ref([
                   <img src="/assets/image/logo-github.png" />
                 </a>
               </div>
-              <p class="body-s fw-r00 project-type">{{ item.projectType }}</p>
-              <!-- <p class="date body-xs">{{ item.date }}</p> -->
+              <p class="body-s project-type">{{ item.projectType }}</p>
               <p class="project-description" v-html="item.description" />
 
               <p class="body-s fw-600 mt-3">내 역할</p>
@@ -109,17 +108,6 @@ const projects = ref([
               <p class="project-skill body-s">
                 {{ item.skills }}
               </p>
-
-              <!-- <p class="fw-700 mt-3">내가 구현한 기능</p>
-            <ol class="project-implement">
-              <li
-                v-for="implement in item.implements"
-                :key="implement"
-                class="body-s"
-              >
-                {{ implement }}
-              </li>
-            </ol> -->
             </div>
           </IOB>
         </div>

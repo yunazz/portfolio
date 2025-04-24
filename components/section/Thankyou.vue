@@ -26,9 +26,6 @@ const githubUrl = ref('https://github.com/yunazz');
           <a :href="githubUrl" target="_blank">
             <img src="/assets/image/logo-github-w.png" />
           </a>
-          <!-- <a href="">
-          <img src="/assets/image/logo-velog-w.png" />
-        </a> -->
         </div>
       </IOB>
     </div>
@@ -68,7 +65,6 @@ section {
   width: 40px;
   height: 40px;
 }
-
 /* 애니메이션 딜레이 */
 .title-l {
   transition-delay: 0.15s;
