@@ -35,7 +35,7 @@
 </template>
 
 <style lang="css" scoped>
-.sticky h2 {
+h2 {
   position: absolute;
   top: 12px;
   left: 20px;
@@ -64,7 +64,6 @@ section {
   border-radius: 320px;
   translate: all 0.5s ease;
 }
-
 .image-me {
   position: absolute;
   bottom: 0;
@@ -127,7 +126,7 @@ section {
 .arrow-down img {
   width: 30px;
 }
-.sticky .arrow-down {
+.arrow-down {
   position: absolute;
 }
 /* 애니메이션 */

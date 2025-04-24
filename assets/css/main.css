@@ -1,6 +1,6 @@
 html {
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
 }
 html::-webkit-scrollbar {
   display: none;
@@ -41,25 +41,19 @@ html::-webkit-scrollbar {
 }
 .section-container {
   display: block;
-  overflow-x: hidden;
-  height: 100vh;
-  max-height: 2000px;
-  overflow-y: scroll;
 }
-.section-snap {
-  min-height: 100vh;
-  scroll-snap-align: start;
+.section-page {
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 #Project {
   background: var(--color-yellow);
 }
 #Interview {
-  align-items: flex-start;
+  align-items: center;
 }
 .wrapper.bg--yellow .page-title {
   color: var(--color-white);
@@ -132,7 +126,7 @@ html::-webkit-scrollbar {
     transform: translateX(0);
   }
 }
-.observe-fade-in {
+/* .observe-fade-in {
   opacity: 0;
   transform: translateY(50px);
   transition: all 1s ease;
@@ -141,4 +135,4 @@ html::-webkit-scrollbar {
 .fade-in {
   opacity: 1;
   transform: translateY(0);
-}
+} */

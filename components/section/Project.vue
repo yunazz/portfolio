@@ -75,43 +75,42 @@ const projects = ref([
 <template>
   <section class="section-page">
     <div class="section-inner not-draggable">
-      <h2 class="inter-800 observe-fade-in">PROJECT</h2>
+      <IOB>
+        <h2 class="inter-800">PROJECT</h2>
+      </IOB>
       <div>
         <div class="projects">
-          <div
-            v-for="(item, index) in projects"
-            :key="index"
-            class="project observe-fade-in"
-          >
-            <span class="project-type-eng inter-700">
-              {{ item.projectTypeEng }}
-            </span>
-            <div class="">
-              <h5 class="title-s fw-700">{{ item.title }}</h5>
-              <a
-                v-if="item?.githubRepo"
-                :href="item.githubRepo"
-                class="github-logo"
-                target="_blank"
-              >
-                <img src="/assets/image/logo-github.png" />
-              </a>
-            </div>
-            <p class="body-s fw-r00 project-type">{{ item.projectType }}</p>
-            <!-- <p class="date body-xs">{{ item.date }}</p> -->
-            <p class="project-description" v-html="item.description" />
+          <IOB v-for="(item, index) in projects" :key="index" :threshold="0.1">
+            <div class="project">
+              <span class="project-type-eng inter-700">
+                {{ item.projectTypeEng }}
+              </span>
+              <div class="">
+                <h5 class="title-s fw-700">{{ item.title }}</h5>
+                <a
+                  v-if="item?.githubRepo"
+                  :href="item.githubRepo"
+                  class="github-logo"
+                  target="_blank"
+                >
+                  <img src="/assets/image/logo-github.png" />
+                </a>
+              </div>
+              <p class="body-s fw-r00 project-type">{{ item.projectType }}</p>
+              <!-- <p class="date body-xs">{{ item.date }}</p> -->
+              <p class="project-description" v-html="item.description" />
 
-            <p class="body-s fw-600 mt-3">내 역할</p>
-            <p class="project-skill body-s">
-              {{ item.role }}
-            </p>
+              <p class="body-s fw-600 mt-3">내 역할</p>
+              <p class="project-skill body-s">
+                {{ item.role }}
+              </p>
 
-            <p class="body-s fw-600 mt-3">기술 스텍</p>
-            <p class="project-skill body-s">
-              {{ item.skills }}
-            </p>
+              <p class="body-s fw-600 mt-3">기술 스텍</p>
+              <p class="project-skill body-s">
+                {{ item.skills }}
+              </p>
 
-            <!-- <p class="fw-700 mt-3">내가 구현한 기능</p>
+              <!-- <p class="fw-700 mt-3">내가 구현한 기능</p>
             <ol class="project-implement">
               <li
                 v-for="implement in item.implements"
@@ -121,7 +120,8 @@ const projects = ref([
                 {{ implement }}
               </li>
             </ol> -->
-          </div>
+            </div>
+          </IOB>
         </div>
       </div>
     </div>
@@ -198,16 +198,16 @@ h2 {
   font-size: 0.875rem;
 }
 /* 애니메이션 딜레이 */
-.project:nth-of-type(1),
-.project:nth-of-type(4) {
+.projects .animate:nth-of-type(1),
+.projects .animate:nth-of-type(4) {
   transition-delay: 0.1s;
 }
-.project:nth-of-type(2),
-.project:nth-of-type(5) {
+.projects .animate:nth-of-type(2),
+.projects .animate:nth-of-type(5) {
   transition-delay: 0.2s;
 }
-.project:nth-of-type(3),
-.project:nth-of-type(6) {
+.projects .animate:nth-of-type(3),
+.projects .animate:nth-of-type(6) {
   transition-delay: 0.3s;
 }
 </style>

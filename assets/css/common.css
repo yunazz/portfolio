@@ -344,7 +344,7 @@
   padding-right: 1rem;
 }
 
-.w-half {
+/* .w-half {
   width: 50%;
 }
 .w-full {
@@ -352,7 +352,7 @@
 }
 .h-full {
   height: 100%;
-}
+} */
 
 .flex {
   display: flex;

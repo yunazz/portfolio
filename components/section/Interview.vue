@@ -2,45 +2,66 @@
 
 <template>
   <section>
-    <h2 class="text-yellow not-draggable observe-fade-in">INTERVIEW</h2>
+    <IOB>
+      <h2 class="text-yellow not-draggable">INTERVIEW</h2>
+    </IOB>
     <div class="section-inner">
       <div class="chat-wrap">
-        <div class="chat-bubble chat-a observe-fade-in">
-          <p>
-            안녕하세요. <b>박유나</b>입니다 — 챗봇 버전으로 인사드립니다. 😊<br />
-            저의 경험과 생각을 최대한 잘 전달해드릴 수 있도록 준비했습니다.<br />
-            궁금한 점이 있으시다면 언제든 질문해 주세요. 성실하게
-            답변드리겠습니다.
-          </p>
-        </div>
-        <div class="chat-bubble chat-q observe-fade-in">
-          <p>질문입니다.</p>
-        </div>
-        <div class="chat-bubble chat-a observe-fade-in">
-          <p>대답</p>
-        </div>
-        <div class="chat-bubble chat-q observe-fade-in">
-          <p>질문입니다.</p>
-        </div>
-        <div class="chat-bubble chat-a observe-fade-in">
-          <p>대답</p>
-        </div>
+        <IOB>
+          <div class="chat-bubble chat-a">
+            <p>
+              안녕하세요. <b>박유나</b>입니다 — 챗봇 버전으로 인사드립니다.
+              😊<br />
+              저의 경험과 생각을 최대한 잘 전달해드릴 수 있도록 준비했습니다.<br />
+              궁금한 점이 있으시다면 언제든 질문해 주세요. 성실하게
+              답변드리겠습니다.
+            </p>
+          </div>
+        </IOB>
+        <IOB>
+          <div class="chat-bubble chat-q">
+            <p>질문입니다.</p>
+          </div>
+        </IOB>
+        <IOB>
+          <div class="chat-bubble chat-a">
+            <p>대답</p>
+          </div>
+        </IOB>
+        <IOB>
+          <div class="chat-bubble chat-q">
+            <p>질문입니다.</p>
+          </div>
+        </IOB>
+        <IOB>
+          <div class="chat-bubble chat-a">
+            <p>대답</p>
+          </div>
+        </IOB>
       </div>
-      <div class="chat-input observe-fade-in">
-        <input type="text" />
-      </div>
+      <IOB class="chat-input-wrap">
+        <div class="chat-input">
+          <input type="text" />
+        </div>
+      </IOB>
     </div>
   </section>
 </template>
 
 <style lang="css" scoped>
 section {
+  background: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 40px;
+  height: 100vh;
+  min-height: 832px;
 }
 .section-inner {
+  position: relative;
   flex-direction: column;
+  height: 100%;
 }
 h2 {
   width: 100%;
@@ -74,6 +95,12 @@ h2 {
   background: #fff29f;
   position: relative;
 }
+.chat-input-wrap {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%) !important;
+}
 .chat-input {
   display: flex;
   align-items: center;
@@ -83,6 +110,7 @@ h2 {
   border-radius: 20px;
   height: 44px;
   background: #f7f7f7;
+  border: 2px solid #f1f1f1;
   box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
     rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
     rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
@@ -114,16 +142,4 @@ h2 {
   margin-bottom: -16px;
 }
 /* 애니메이션 */
-.observe-fade-in.chat-q {
-  transform: translateX(30px);
-}
-.observe-fade-in.chat-q.fade-in {
-  transform: translateX(0);
-}
-.observe-fade-in.chat-a {
-  transform: translateX(-30px);
-}
-.observe-fade-in.chat-a.fade-in {
-  transform: translateX(0);
-}
 </style>
