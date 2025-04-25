@@ -12,7 +12,14 @@ const projects = ref([
     role: '기획, 디자인, 프론트엔드, 백엔드, AI, DevOps',
     skills:
       'Nuxt3, FastAPI, MariaDB, ChromaDB, sLLM, AWS, Runpod, Docker, CI/CD',
-    intro: `   AmoreSearch는 아모레퍼시픽의 사내 정보를 보다 효율적으로 검색하고 활용할 수 있도록 설계된 AI 기반 검색 시스템입니다.<br /> sLLM을 활용한 질의응답 시스템으로, 사내 문서뿐 아니라 화장품 정보, 업계 뉴스 및 논문 등 다양한 정보를 통합적으로 검색할 수 있도록 구성되어있고,<br />LLM 파인튜닝과 임베딩 실험을 통해 사용자에게 최적화된 검색 결과를 제공하는 것이 핵심 목표였습니다.`,
+    intro: `AmoreSearch는 아모레퍼시픽의 사내 정보를 보다 효율적으로 검색하고 활용할 수 있도록 설계된 <u>AI 기반 검색 시스템</u>입니다.<br /> sLLM을 활용한 질의응답 시스템으로, 사내 문서뿐 아니라 화장품 정보, 업계 뉴스 및 논문 등 다양한 정보를 통합적으로 검색할 수 있도록 구성되어 있고,<br />LLM 파인튜닝과 임베딩 실험을 통해 사용자에게 최적화된 검색 결과를 제공하는 것이 핵심 목표였습니다.`,
+    skillDetail: {
+      frontend: 'Nuxt.js 3, Vuetify 3',
+      backend: 'FastAPI, LangChain, Pydantic, PyMySQL, PyJWT',
+      ai: 'Qwen2.5-72B-Instruct, multilingual-e5-large (RunPod)',
+      db: 'MariaDB, ChromaDB, AWS S3',
+      server: 'AWS EC2, S3, Docker, Github Actions (CI/CD)',
+    },
     functions: [
       'AI 기반 통합 검색 (사내 문서, 뉴스, 논문, 제품 정보 등)',
       '최신 뉴스·논문·저널 크롤링 및 AI 질의',
@@ -22,53 +29,68 @@ const projects = ref([
       '직원 입·퇴사 관리',
       'JWT 기반 로그인 인증',
     ],
+    contributions: [
+      {
+        title: 'CI/CD',
+        details: [
+          'Github Actions를 활용한 자동화된 배포 파이프라인 구축',
+          'FastAPI & Nuxt3 무중단 배포',
+          'Docker와 연동하여 지속 가능한 배포 환경 구성',
+        ],
+      },
+      {
+        title: '프론트엔드',
+        details: [
+          'Vuetify3를 활용한 UI/UX 설계 및 컴포넌트 개발',
+          '로그인, 검색, 뉴스/문서/화장품 조회, 즐겨찾기, 마이페이지 등 주요 기능 구현',
+          'NuxtImg 활용한 이미지 최적화',
+        ],
+      },
+      {
+        title: '백엔드',
+        details: [
+          'LangChain 기반 AI 검색 API 설계 및 구현',
+          '사용자 인증 및 권한 관리를 위한 PyJWT 적용',
+          'Pydantic으로 데이터 유효성 검증',
+        ],
+      },
+      {
+        title: '데이터베이스',
+        details: [
+          'MariaDB 기반의 사용자 및 콘텐츠 관리용 스키마 설계',
+          'ChromaDB를 통한 벡터 임베딩 검색 구축',
+          'AWS S3를 활용한 문서 및 이미지 저장소 연동',
+        ],
+      },
+      {
+        title: 'sLLM 기반 검색 시스템 개발',
+        details: [
+          'multilingual-e5-large 임베딩 모델 실험 및 채택',
+          'Qwen2.5-72B-Instruct 기반 LLM 연동',
+          'HyQE 기반 질문 생성 및 ReRank 방식 적용',
+        ],
+      },
+      {
+        title: '서버/인프라',
+        details: [
+          'AWS EC2, S3 기반 인프라 구성 및 운영',
+          '',
+          'FastAPI 서버와의 연동 처리',
+        ],
+      },
+      {
+        title: 'Docker',
+        details: [
+          '프론트, 백엔드, DB의 Dockerfile 작성 및 컨테이너화',
+          'Docker Compose로 전체 시스템 로컬 테스트 및 배포 환경 구성',
+        ],
+      },
+    ],
     uiImage: [
       '/image/project/amoresearch-1.gif',
       '/image/project/amoresearch-2.gif',
       '/image/project/amoresearch-3.gif',
       '/image/project/amoresearch-4.gif',
-    ],
-    contributions: [
-      {
-        title: 'CI/CD',
-        content: '',
-      },
-      {
-        title: 'Nuxt3',
-        content: '',
-      },
-      {
-        title: 'FastAPI',
-        content: '',
-      },
-      {
-        title: 'Python',
-        content: '',
-      },
-      {
-        title: 'MariaDB',
-        content: '',
-      },
-      {
-        title: 'ChromaDB',
-        content: '',
-      },
-      {
-        title: 'sLLM',
-        content: '',
-      },
-      {
-        title: 'AWS',
-        content: '',
-      },
-      {
-        title: 'Runpod',
-        content: '',
-      },
-      {
-        title: 'Docker',
-        content: '',
-      },
     ],
   },
   {
@@ -89,7 +111,7 @@ const projects = ref([
     modalType: 'sf',
     title: 'XXX펀즈',
     subtitle: '카피트레이딩 플랫폼',
-    tag: 'TEAM',
+    tag: 'COMPANY',
     githubRepo: '',
     date: '2025.01.21 ~ 2025.03.20',
     description:
@@ -102,7 +124,7 @@ const projects = ref([
     modalType: 'sklmno',
     title: 'SKLMNO',
     subtitle: '통신사 대리점 통합 관리 시스템',
-    tag: 'TEAM',
+    tag: 'COMPANY',
     githubRepo: '',
     date: '2025.01.21 ~ 2025.03.20',
     description:
