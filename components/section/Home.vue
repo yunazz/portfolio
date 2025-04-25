@@ -54,15 +54,14 @@ section {
 .masked-container {
   width: 100%;
   min-width: 1280px;
-  height: 620px;
+  height: 730px;
   background: var(--color-yellow);
   position: relative;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 320px;
-  translate: all 0.5s ease;
+  border-radius: 400px;
 }
 .image-me {
   position: absolute;
@@ -71,7 +70,7 @@ section {
   transform: translate(-48%, 10%);
 }
 .image-me img {
-  width: 310px;
+  width: 380px;
 }
 .mask-text {
   position: relative;
@@ -85,7 +84,8 @@ section {
   width: 100%;
   white-space: nowrap;
   transform: translateX(80px);
-  line-height: 290px;
+  line-height: 380px;
+  word-spacing: -20px;
 }
 .mask-text .title-xl:last-of-type {
   transform: translateX(60px);

@@ -26,13 +26,11 @@
   padding-top: 120px;
   margin-top: 100vh;
   background: white;
-
-  /* background: white; */
 }
 #Home {
   /* z-index: -1; */
 }
-#Introduce {
+.section-page #Introduce {
   z-index: 1;
   top: 0;
 }

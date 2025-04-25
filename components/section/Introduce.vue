@@ -20,21 +20,19 @@
         <IOB>
           <p class="flex-column body-l">
             <span>
-              <b class="highlight-hover">디자인</b>과
-              <b class="highlight-hover">UX</b>에 대한 관심으로
-              <b class="highlight-hover">웹퍼블리싱</b>을 시작했고,
+              <b class="highlight">디자인</b>과 <b class="highlight">UX</b>에
+              대한 관심으로 <b class="highlight">웹퍼블리싱</b>을 시작했고,
             </span>
             <span>
-              실무와 프로젝트를 통해 <b class="highlight-hover">프론트엔드</b>는
-              물론 <b class="highlight-hover">백엔드</b>까지 자연스럽게
-              확장해왔습니다.
+              실무와 프로젝트를 통해 <b class="highlight">프론트엔드</b>는 물론
+              <b class="highlight">백엔드</b>까지 자연스럽게 확장해왔습니다.
             </span>
             <span>
               스타트업 환경에서 다양한 역할을 맡으며 실무 경험을 쌓았고,
             </span>
             <span
-              >최근에는 <b class="highlight-hover">AI 분야</b>로도 관심과 기술의
-              폭을 넓히고 있습니다.</span
+              >최근에는 <b class="highlight">AI 분야</b>로도 관심과 기술의 폭을
+              넓히고 있습니다.</span
             >
           </p>
         </IOB>
