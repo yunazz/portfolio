@@ -1,54 +1,55 @@
 <script setup>
-const props = defineProps({ threshold: { default: 0.6, type: Number } });
-const observer = ref(null);
-const fadein = ref(null);
+const isVisible = ref(false);
+const target = ref(null);
+let lastScrollY = 0;
 
-function inViewport(entries, observerInstance) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-inViewport');
-      observerInstance.unobserve(entry.target);
+function checkVisibility() {
+  if (!target.value) return;
+  const rect = target.value.getBoundingClientRect();
+  const currentScrollY = window.scrollY;
+  const scrollingDown = currentScrollY > lastScrollY;
+
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    if (scrollingDown) {
+      isVisible.value = true;
     }
-  });
+  } else if (rect.top > window.innerHeight) {
+    if (!scrollingDown) {
+      isVisible.value = false;
+    }
+  }
+
+  lastScrollY = currentScrollY;
 }
 
 onMounted(() => {
-  observer.value = new IntersectionObserver(
-    (entries, observerInstance) => {
-      inViewport(entries, observerInstance);
-    },
-    {
-      threshold: props.threshold,
-    }
-  );
-
-  if (fadein.value) {
-    observer.value.observe(fadein.value);
+  if (import.meta.client) {
+    lastScrollY = window.scrollY;
+    window.addEventListener('scroll', checkVisibility, { passive: true });
   }
 });
 
 onBeforeUnmount(() => {
-  if (observer.value) {
-    observer.value.disconnect();
+  if (import.meta.client) {
+    window.removeEventListener('scroll', checkVisibility);
   }
 });
 </script>
 
 <template>
-  <div ref="fadein" class="animate">
+  <div ref="target" :class="['animate', { 'fade-in': isVisible }]">
     <slot />
   </div>
 </template>
 
 <style scoped>
 .animate {
-  transition: 1s;
   opacity: 0;
-  transform: translate3d(0, 50px, 0);
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
-
-.animate.is-inViewport {
+.fade-in {
   opacity: 1;
-  transform: translate3d(0, 0, 0);
+  transform: translateY(0);
 }
 </style>
