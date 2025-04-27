@@ -44,7 +44,7 @@ const typeText = computed(() =>
         </div>
 
         <article>
-          <h5>🛠️ 내 역할</h5>
+          <h5>👩🏻‍💻 내 역할</h5>
           <div class="project-skills">
             {{ project.role }}
           </div>
@@ -87,7 +87,7 @@ const typeText = computed(() =>
         </article>
 
         <article>
-          <h5>⚙️ 주요 기능</h5>
+          <h5>🧩 주요 기능</h5>
           <ol>
             <li v-for="(fnc, index) in project.functions" :key="index">
               {{ fnc }}
@@ -96,7 +96,7 @@ const typeText = computed(() =>
         </article>
 
         <article class="my-work">
-          <h5>👩🏻‍💻 핵심 기여 및 문제 해결 경험</h5>
+          <h5>🚀 핵심 기여 및 문제 해결 경험</h5>
           <details
             v-for="(contribution, index) in project.contributions"
             :key="index"
@@ -113,6 +113,15 @@ const typeText = computed(() =>
               </ol>
             </div>
           </details>
+        </article>
+
+        <article>
+          <h5>📈 프로젝트를 통해 성장한 점</h5>
+          <ol>
+            <li v-for="(review, index) in project.reviews" :key="index">
+              {{ review }}
+            </li>
+          </ol>
         </article>
 
         <article>

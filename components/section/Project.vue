@@ -80,7 +80,7 @@ const projects = ref([
         ],
       },
     ],
-    review: [
+    reviews: [
       [
         'Nuxt3 + FastAPI 기반 풀스택 아키텍처 설계 및 운영 경험 강화',
         '검색 결과 렌더링 속도 개선 경험',
@@ -163,7 +163,7 @@ const projects = ref([
         ],
       },
     ],
-    review: [
+    reviews: [
       'Django 프레임워크 기반 풀스택 서비스 개발 역량 강화',
       'RAG 기반 AI 챗봇 설계 및 품질 개선 프로세스 실습 경험',
       '대규모 비정형 데이터 전처리 및 관리 경험 습득',
@@ -239,7 +239,7 @@ const projects = ref([
         ],
       },
     ],
-    review: [
+    reviews: [
       'Nuxt3 기반 SSR 아키텍처의 최적화 및 운영 노하우 습득',
       '실시간 데이터 스트리밍 시스템 구축 경험',
       'PWA 기술을 통한 모바일 친화 서비스 설계 및 최적화 경험',
@@ -301,7 +301,7 @@ const projects = ref([
         ],
       },
     ],
-    review: [
+    reviews: [
       '대규모 B2B 복합 업무 시스템의 설계 및 운영 경험 축적',
       'Vue/Vuex 기반 SPA 아키텍처 설계 능력 강화',
       'WebSocket 실시간 스트리밍 및 대시보드 최적화 경험',
@@ -365,7 +365,7 @@ const projects = ref([
         ],
       },
     ],
-    review: [
+    reviews: [
       'Nuxt3 + Quasar 조합을 통한 반응형 풀스택 아키텍처 구축 경험',
       'ORM 기반 데이터베이스 설계 및 최적화 역량 강화',
       'Ubuntu 서버 세팅 및 운영 경험 (보안/최적화 포함)',
@@ -431,7 +431,7 @@ const projects = ref([
         ],
       },
     ],
-    review: [
+    reviews: [
       'Nuxt2 SSR을 활용한 SEO 및 퍼포먼스 최적화 경험',
       'AWS EC2 + S3 인프라 구축 및 배포 경험 강화',
       'Vuex를 통한 상태 관리 및 데이터 흐름 최적화 실습',
