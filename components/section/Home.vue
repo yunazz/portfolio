@@ -28,6 +28,7 @@
         </div>
       </div>
     </div>
+
     <div class="arrow-down animate-bounce">
       <img src="/assets/image/arrowdown.png" alt="" />
     </div>
@@ -45,6 +46,7 @@ h2 {
 }
 section {
   width: 100%;
+  min-width: 1200px;
   min-height: 832px;
   height: 100vh;
   background: var(--color-black);
@@ -65,12 +67,12 @@ section {
 }
 .image-me {
   position: absolute;
-  bottom: 0;
+  bottom: 62px;
   left: 50%;
   transform: translate(-48%, 10%);
 }
 .image-me img {
-  width: 370px;
+  width: 380px;
 }
 .mask-text {
   position: relative;

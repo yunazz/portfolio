@@ -465,20 +465,17 @@ function hideDetail() {
       <div>
         <div class="projects">
           <IOB v-for="(item, index) in projects" :key="index" :threshold="0.1">
-            <d class="project">
+            <div class="project">
               <span class="project-type-eng inter-700">
                 {{ item.tag }}
               </span>
-              <div>
+              <div class="flex align-start">
                 <h5 class="title-s fw-700">{{ item.title }}</h5>
-                <a
+                <img
                   v-if="item?.githubRepo"
-                  :href="item.githubRepo"
                   class="github-logo"
-                  target="_blank"
-                >
-                  <img src="/assets/image/logo-github.png" />
-                </a>
+                  src="/assets/image/logo-github.png"
+                />
               </div>
               <p class="body-s project-type">{{ item.subtitle }}</p>
               <ol class="project-intro">
@@ -496,7 +493,10 @@ function hideDetail() {
               <p class="project-skill body-s">
                 {{ item.skills }}
               </p>
-            </d>
+              <div class="more">
+                <img src="/assets/image/more.png" />
+              </div>
+            </div>
             <div class="project-hover not-draggable">
               <button @click="showDetail(item)">자세히 보기</button>
             </div>
@@ -534,13 +534,13 @@ h2 {
   margin: 110px 0 80px;
 }
 .project {
-  height: 326px;
+  height: 354px;
   position: relative;
   display: flex;
   flex-direction: column;
   background: white;
   border-radius: 5px;
-  padding: 22px 28px 16px 28px;
+  padding: 18px 28px 16px 28px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
     rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
     rgba(0, 0, 0, 0.07) 0px 16px 16px;
@@ -574,14 +574,22 @@ h2 {
 .project-hover button:hover {
   background: var(--color-white);
 }
-.github-logo {
-  position: absolute;
-  top: 14px;
-  right: 20px;
+.align-start.flex {
+  align-items: center;
+  height: 36px;
+  gap: 12px;
 }
-.github-logo img {
-  width: 24px;
-  height: 24px;
+.github-logo {
+  width: 22px;
+  height: 22px;
+}
+.more {
+  position: absolute;
+  right: 16px;
+  top: 6px;
+}
+.more img {
+  width: 22px;
 }
 .project-type-eng {
   position: absolute;
@@ -604,7 +612,7 @@ h2 {
 .project-intro li {
   list-style-type: disc;
   margin-left: 18px;
-  line-height: 1.65;
+  line-height: 1.6;
 }
 .project-skill {
   word-spacing: 3px;
