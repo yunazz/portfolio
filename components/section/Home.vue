@@ -70,7 +70,7 @@ section {
   transform: translate(-48%, 10%);
 }
 .image-me img {
-  width: 380px;
+  width: 370px;
 }
 .mask-text {
   position: relative;

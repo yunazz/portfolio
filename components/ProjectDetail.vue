@@ -7,10 +7,10 @@ function close() {
 }
 
 const typeText = computed(() =>
-  props.project.projectType === 'TEAM'
+  props.project.tag === 'TEAM'
     ? '팀 프로젝트'
-    : props.project.projectType === 'SOLO'
-    ? '개인 프로젝트'
+    : props.project.tag === 'SOLO'
+    ? '개인 프리랜스 프로젝트'
     : '회사 프로젝트'
 );
 </script>
@@ -25,19 +25,27 @@ const typeText = computed(() =>
         />
       </button>
       <div class="modal-inner">
-        <h3 class="project-title">{{ project.title }}</h3>
+        <h3 class="project-title">
+          {{ project.title }}
+          <a
+            v-if="project.githubRepo"
+            :href="project.githubRepo"
+            target="_blank"
+          >
+            <img src="/assets/image/logo-github.png" alt="" />
+          </a>
+        </h3>
         <p class="project-subtitle">{{ project.subtitle }}</p>
         <p class="project-date">
           작업기간 : {{ project.date }} / {{ typeText }}
         </p>
-
-        <div class="project-intro">
-          <p v-html="project.intro" class="text-center" />
+        <div class="project-description">
+          <p v-html="project.description" class="text-center" />
         </div>
 
         <article>
           <h5>🛠️ 내 역할</h5>
-          <div class="skills">
+          <div class="project-skills">
             {{ project.role }}
           </div>
         </article>
@@ -94,7 +102,9 @@ const typeText = computed(() =>
             :key="index"
             open
           >
-            <summary>{{ contribution.title }}</summary>
+            <summary>
+              <span class="highlight">{{ contribution.title }}</span>
+            </summary>
             <div>
               <ol>
                 <li v-for="(detail, i) in contribution.details" :key="i">
@@ -139,7 +149,7 @@ const typeText = computed(() =>
   position: relative;
   background: white;
   border-radius: 10px;
-  padding: 2.5rem 2rem 3.5rem;
+  padding: 3rem 2rem 4.5rem;
   max-width: 80vw;
   min-width: 1200px;
   width: 90%;
@@ -153,9 +163,6 @@ const typeText = computed(() =>
   width: 1000px;
   margin: 0 auto;
 }
-.modal article:first-of-type {
-  margin-top: 2.4rem;
-}
 
 .modal article {
   margin-top: 3.5em;
@@ -167,6 +174,9 @@ const typeText = computed(() =>
 }
 
 .project-title {
+  display: flex;
+  justify-content: center;
+  column-gap: 10px;
   font-size: 2.5rem;
   line-height: 1;
   margin: 4px 0 6px;
@@ -174,7 +184,9 @@ const typeText = computed(() =>
   font-weight: 700;
   color: #ffd500;
 }
-
+.project-title img {
+  width: 32px;
+}
 .project-subtitle {
   text-align: center;
   font-size: 1.375rem;
@@ -208,7 +220,9 @@ const typeText = computed(() =>
   background: #f0f0f0;
   border-radius: 6px;
 }
-
+.project-modal summary::marker {
+  color: #aaaaaa;
+}
 .project-modal summary {
   font-size: 1rem;
   margin-bottom: 2px;
@@ -234,9 +248,26 @@ const typeText = computed(() =>
   margin-bottom: 8px;
   list-style-type: disc;
 }
+.project-skills {
+  font-size: 1rem;
+  line-height: 1;
+  word-spacing: 4px;
+}
+
+.project-skills span {
+  margin-right: 0.75rem;
+}
 
 .project-modal ol li b {
   font-weight: 600;
+}
+
+.project-description {
+  margin-top: 1rem;
+  background: #f0f0f0;
+  padding: 24px 20px;
+  line-height: 1.6;
+  border-radius: 6px;
 }
 
 .project-ui {
@@ -298,7 +329,7 @@ table.tech-stack thead {
 table.tech-stack th,
 table.tech-stack td {
   border: 1px solid #ddd;
-  padding: 12px 16px;
+  padding: 10px 16px;
   text-align: left;
 }
 
@@ -323,21 +354,8 @@ table.tech-stack td:first-child {
   white-space: nowrap;
 }
 
-.project-intro {
-  margin-top: 1rem;
-  background: #f0f0f0;
-  padding: 24px 20px;
-  line-height: 1.6;
-}
-
-.skills {
-  font-size: 1rem;
-  line-height: 1;
-  word-spacing: 4px;
-}
-
-.skills span {
-  margin-right: 0.75rem;
+.highlight::before {
+  bottom: 0;
 }
 
 @keyframes modalFadeIn {
