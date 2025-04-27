@@ -9,7 +9,7 @@ function close() {
 const typeText = computed(() =>
   props.project.tag === 'TEAM'
     ? '팀 프로젝트'
-    : props.project.tag === 'SOLO'
+    : props.project.tag === 'FREELANCE'
     ? '개인 프리랜스 프로젝트'
     : '회사 프로젝트'
 );
@@ -87,7 +87,7 @@ const typeText = computed(() =>
         </article>
 
         <article>
-          <h5>⚙️ 주요 기능 및 특징</h5>
+          <h5>⚙️ 주요 기능</h5>
           <ol>
             <li v-for="(fnc, index) in project.functions" :key="index">
               {{ fnc }}
@@ -96,7 +96,7 @@ const typeText = computed(() =>
         </article>
 
         <article class="my-work">
-          <h5>👩🏻‍💻 내 작업 내용</h5>
+          <h5>👩🏻‍💻 핵심 기여 및 문제 해결 경험</h5>
           <details
             v-for="(contribution, index) in project.contributions"
             :key="index"
