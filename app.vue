@@ -23,7 +23,7 @@
   top: 0;
 }
 .sections {
-  padding-top: 120px;
+  padding-top: 7.5rem;
   margin-top: 100vh;
   background: white;
 }
