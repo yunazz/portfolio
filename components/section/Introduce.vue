@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section>
+  <section class="Introduce">
     <div class="text-center">
       <div class="introduce-title">
         <IOB>
@@ -63,91 +63,6 @@
 </template>
 
 <style lang="css" scoped>
-section {
-  background: white;
-  align-items: flex-start;
-  position: relative;
-  overflow-y: hidden;
-  min-height: 832px;
-}
-.speech-bubble {
-  position: relative;
-  background: var(--color-lightyellow);
-  padding: 20px 0;
-  border-radius: 100px;
-  width: 700px;
-}
-.speech-bubble:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border: 20px solid transparent;
-  border-top-color: var(--color-lightyellow);
-  border-bottom: 0;
-  border-left: 0;
-  margin-left: -10px;
-  margin-bottom: -20px;
-}
-.memoticon {
-  margin-top: 36px;
-}
-.memoticon img {
-  width: 150px;
-}
-.introduce-title {
-  position: relative;
-  margin-bottom: 24px;
-}
-.introduce-title .title-s {
-  font-weight: 500;
-  z-index: 2;
-}
-.introduce-title .title-m {
-  font-weight: 500;
-  z-index: 2;
-  background: transparent;
-}
-.introduce-title .title-m b {
-  position: relative;
-  font-weight: 700;
-  padding: 0 3px;
-  z-index: 0;
-}
-.introduce-title .title-m b::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 2px;
-  width: 100%;
-  height: 8px;
-  background-color: var(--color-yellow);
-  z-index: -1;
-}
-.introduce-text {
-  cursor: default;
-  display: flex;
-  flex-direction: column;
-  row-gap: 1.75rem;
-  line-height: 1.65;
-}
-.introduce-text b {
-  font-weight: 700;
-  padding: 0 2px;
-  word-spacing: -3px;
-}
-.introduce-text p:last-of-type {
-  margin-top: 8px;
-}
-.introduce-text p:last-of-type span {
-  line-height: 1.8;
-  font-weight: 500;
-}
-.dotted span {
-  border-bottom: 2px dotted;
-}
 /* 애니메이션 딜레이 */
 .speech-bubble {
   animation-delay: 0.1s;

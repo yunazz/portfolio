@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section>
+  <section class="Interview">
     <IOB>
       <h2 class="text-yellow not-draggable">INTERVIEW</h2>
     </IOB>
@@ -63,83 +63,4 @@ section {
   flex-direction: column;
   height: 100%;
 }
-h2 {
-  width: 100%;
-  text-align: center;
-  margin-top: 40px;
-}
-.chat-wrap {
-  width: 900px;
-  font-size: var(--body-size-m);
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-}
-.chat-bubble {
-  margin-top: 40px;
-}
-.chat-bubble p {
-  display: inline-block;
-  padding: 16px 28px;
-  border-radius: 14px;
-  line-height: 1.5;
-}
-.chat-wrap .chat-a {
-  float: left;
-}
-.chat-wrap .chat-a p {
-  padding: 10px 28px 10px 0;
-}
-.chat-wrap .chat-q p {
-  float: right;
-  background: #fff29f;
-  position: relative;
-}
-.chat-input-wrap {
-  position: absolute;
-  bottom: 26px;
-  left: 50%;
-  transform: translateX(-50%) !important;
-}
-.chat-input {
-  display: flex;
-  align-items: center;
-  width: 900px;
-  margin: 54px auto 20px;
-  padding: 0 20px;
-  border-radius: 20px;
-  height: 44px;
-  background: #f7f7f7;
-  border: 2px solid #f1f1f1;
-  box-shadow: rgba(14, 63, 126, 0.04) 0px 0px 0px 1px,
-    rgba(42, 51, 69, 0.04) 0px 1px 1px -0.5px,
-    rgba(42, 51, 70, 0.04) 0px 3px 3px -1.5px,
-    rgba(42, 51, 70, 0.04) 0px 6px 6px -3px,
-    rgba(14, 63, 126, 0.04) 0px 12px 12px -6px,
-    rgba(14, 63, 126, 0.04) 0px 24px 24px -12px;
-}
-.chat-input input {
-  border: 0;
-  margin: 0;
-  outline: none;
-  font-size: 1rem;
-  line-height: 42px;
-  padding: 0;
-  background: transparent;
-}
-.chat-q p:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  right: 32px;
-  width: 0;
-  height: 0;
-  border: 16px solid transparent;
-  border-top-color: #fff29f;
-  border-bottom: 0;
-  border-right: 0;
-  margin-right: -8px;
-  margin-bottom: -16px;
-}
-/* 애니메이션 */
 </style>

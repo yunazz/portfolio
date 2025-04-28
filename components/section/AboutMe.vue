@@ -7,7 +7,7 @@ const openPdf = () => {
 </script>
 
 <template>
-  <section>
+  <section class="Aboutme">
     <div class="section-inner">
       <IOB :threshold="0.05" style="flex: 0 0 270px">
         <div class="profile flex-column not-draggable">
@@ -19,14 +19,14 @@ const openPdf = () => {
             <span>yunaz0402@gmail.com</span>
             <span>개발 경력: 3년 9개월</span>
           </p>
-          <div class="contact">
-            <a :href="githubUrl" target="_blank">
-              <img src="/assets/image/logo-github.png" />
-            </a>
-            <button @click="openPdf">
-              <img src="/assets/image/resume.png" />
-            </button>
-          </div>
+        </div>
+        <div class="contact">
+          <a :href="githubUrl" target="_blank">
+            <img src="/assets/image/logo-github.png" />
+          </a>
+          <button @click="openPdf">
+            <img src="/assets/image/resume.png" />
+          </button>
         </div>
       </IOB>
       <div class="profile-detail flex not-draggable">
@@ -131,59 +131,4 @@ const openPdf = () => {
   </section>
 </template>
 
-<style lang="css" scoped>
-section {
-  margin-top: 100px;
-  background: var(--color-white);
-  min-height: 832px;
-}
-.profile p:nth-of-type(1) {
-  font-size: 30px;
-}
-.profile p:nth-of-type(2) {
-  font-size: 26px;
-}
-.profile-detail {
-  flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 54px;
-}
-.profile-detail > div.flex-column {
-  row-gap: 36px;
-}
-.profile-detail > div.flex-column:first-of-type div:last-of-type ul li,
-.profile-detail > div.flex-column:last-of-type div:last-of-type ul li {
-  margin-bottom: 16px;
-  line-height: 1.5;
-}
-.profile-detail > div.flex-column .inter-700 {
-  font-size: 1.625rem;
-}
-.profile-detail ul li {
-  margin-bottom: 4px;
-  font-size: var(--body-size-m);
-}
-.profile-detail ul li span {
-  font-size: var(--body-size-s);
-}
-.profile-detail .date {
-  color: #7e7e7e;
-}
-.profile-detail > div.flex-column:first-of-type div:first-of-type,
-.profile-detail > div.flex-column:last-of-type div:first-of-type {
-  transition-delay: 0.3s;
-}
-.profile-detail > div.flex-column:first-of-type div:last-of-type,
-.profile-detail > div.flex-column:last-of-type div:last-of-type {
-  transition-delay: 0.4s;
-}
-.contact {
-  display: flex;
-  column-gap: 0.5rem;
-}
-.contact img {
-  width: 34px;
-  margin-top: 18px;
-}
-</style>
+<style lang="css" scoped></style>
