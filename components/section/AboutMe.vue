@@ -1,5 +1,9 @@
 <script setup>
 const githubUrl = ref('https://github.com/yunazz');
+
+const openPdf = () => {
+  window.open('/resume.pdf', '_blank');
+};
 </script>
 
 <template>
@@ -13,10 +17,16 @@ const githubUrl = ref('https://github.com/yunazz');
             <span>1995.04.02</span>
             <span>010-4470-5117</span>
             <span>yunaz0402@gmail.com</span>
+            <span>개발 경력: 3년 9개월</span>
           </p>
-          <a :href="githubUrl" target="_blank">
-            <img src="/assets/image/logo-github.png" class="contact-logo" />
-          </a>
+          <div class="contact">
+            <a :href="githubUrl" target="_blank">
+              <img src="/assets/image/logo-github.png" />
+            </a>
+            <button @click="openPdf">
+              <img src="/assets/image/resume.png" />
+            </button>
+          </div>
         </div>
       </IOB>
       <div class="profile-detail flex not-draggable">
@@ -110,7 +120,7 @@ const githubUrl = ref('https://github.com/yunazz');
                 </li>
                 <li>
                   <p class="fw-600">AI</p>
-                  <span>Python, Langchain</span>
+                  <span>Python, Langchain, OpenAI API</span>
                 </li>
               </ul>
             </div>
@@ -168,7 +178,11 @@ section {
 .profile-detail > div.flex-column:last-of-type div:last-of-type {
   transition-delay: 0.4s;
 }
-.contact-logo {
+.contact {
+  display: flex;
+  column-gap: 0.5rem;
+}
+.contact img {
   width: 34px;
   margin-top: 18px;
 }
