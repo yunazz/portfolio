@@ -2,7 +2,7 @@
 const githubUrl = ref('https://github.com/yunazz');
 
 const openPdf = () => {
-  window.open('/resume.pdf', '_blank');
+  window.open('/resume_1.pdf', '_blank');
 };
 </script>
 
