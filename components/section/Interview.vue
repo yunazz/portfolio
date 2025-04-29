@@ -1,4 +1,5 @@
 <script setup>
+const loading = ref(false);
 const refQuestion = ref([
   {
     question: '개발자로서 가장 중요하게 생각하는 가치는 무엇인가요?',
@@ -19,7 +20,23 @@ const sampleQuestion = ref([
   '지금까지 진행한 프로젝트 중 가장 기억에 남는 프로젝트는 무엇인가요?',
 ]);
 
-function askQuestion(question) {}
+async function askQuestion(question) {
+  if (loading.value) return;
+
+  loading.value = true;
+  // const response = await fetch('http://YOUR_SERVER_IP:8000/ask', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  //   body: JSON.stringify({ prompt: question }),
+  // });
+  // const data = await response.json();
+  // console.log(data.response);
+  refQuestion.value.push({ question: question });
+  setTimeout(() => {
+    loading.value = false;
+    refQuestion.value[-1].answer = '답변';
+  }, 4000);
+}
 </script>
 
 <template>
@@ -52,6 +69,10 @@ function askQuestion(question) {}
             </div>
           </IOB>
         </template>
+
+        <div v-if="loading" class="flex justify-center">
+          <span class="loader"></span>
+        </div>
         <IOB>
           <div class="sample-question">
             <p>질문 추천</p>
@@ -78,6 +99,25 @@ function askQuestion(question) {}
 </template>
 
 <style lang="css" scoped>
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #dadada;
+  border-bottom-color: var(--color-yellow);
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 section {
   background: white;
   display: flex;
