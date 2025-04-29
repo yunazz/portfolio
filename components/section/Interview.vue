@@ -1,5 +1,6 @@
 <script setup>
 const loading = ref(false);
+const inputValue = ref('');
 const refQuestion = ref([
   {
     question: '개발자로서 가장 중요하게 생각하는 가치는 무엇인가요?',
@@ -24,25 +25,44 @@ async function askQuestion(question) {
   if (loading.value) return;
 
   loading.value = true;
-  // const response = await fetch('http://YOUR_SERVER_IP:8000/ask', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  //   body: JSON.stringify({ prompt: question }),
-  // });
-  // const data = await response.json();
-  // console.log(data.response);
+
+  const currentIndex = refQuestion.value.length;
   refQuestion.value.push({ question: question });
-  setTimeout(() => {
-    loading.value = false;
-    refQuestion.value[-1].answer = '답변';
-  }, 4000);
+
+  const { data } = await useFetch('/api/rag-chat', {
+    method: 'POST',
+    body: { question: question },
+  });
+
+  if (data?.value?.response) {
+    refQuestion.value[currentIndex].answer = data.value.response;
+  }
+  loading.value = false;
+}
+
+async function searchInput() {
+  if (loading.value) return;
+  if (!inputValue.value) return;
+  const question = inputValue.value;
+
+  inputValue.value = '';
+
+  await askQuestion(question);
 }
 </script>
 
 <template>
   <section class="Interview">
     <IOB>
-      <h2 class="text-yellow not-draggable">INTERVIEW</h2>
+      <h2 class="text-yellow not-draggable">
+        <span>INTERVIEW</span>
+        <div class="infomation">
+          <Icon name="ion:alert-circle" />
+          <div class="tooltip">
+            <b>JavaScript + LangChain</b> 기반의 RAG 챗봇을 구현해 보았습니다.
+          </div>
+        </div>
+      </h2>
     </IOB>
     <div class="section-inner">
       <div class="chat-wrap">
@@ -70,7 +90,7 @@ async function askQuestion(question) {
           </IOB>
         </template>
 
-        <div v-if="loading" class="flex justify-center">
+        <div v-if="loading" class="loader-wrap">
           <span class="loader"></span>
         </div>
         <IOB>
@@ -91,7 +111,13 @@ async function askQuestion(question) {
 
       <IOB class="chat-input-wrap">
         <div class="chat-input">
-          <input type="text" />
+          <input type="text" v-model="inputValue" @keyup.enter="searchInput" />
+          <button class="send-btn" :disabled="loading" @click="searchInput">
+            <Icon
+              name="eva:arrow-forward-fill"
+              style="color: black; font-size: 26px"
+            />
+          </button>
         </div>
       </IOB>
     </div>
@@ -99,25 +125,72 @@ async function askQuestion(question) {
 </template>
 
 <style lang="css" scoped>
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #dadada;
-  border-bottom-color: var(--color-yellow);
+.send-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-yellow);
+  color: white;
+  border-radius: 20px;
+  width: 38px;
+  height: 38px;
+}
+.loader-wrap {
+  display: flex;
+  padding: 50px 30px 0;
+}
+.loader,
+.loader:before,
+.loader:after {
   border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+  width: 2em;
+  height: 2em;
+  animation-fill-mode: both;
+  animation: bblFadInOut 1.8s infinite ease-in-out;
+}
+.loader {
+  color: #a8a8a8;
+  font-size: 7px;
+  position: relative;
+  text-indent: -9999em;
+  transform: translateZ(0);
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 0;
+}
+.loader:before {
+  left: -3.25em;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 3.25em;
 }
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
+@keyframes bblFadInOut {
+  0%,
+  80%,
   100% {
-    transform: rotate(360deg);
+    box-shadow: 0 2.5em 0 -1.3em;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0;
   }
 }
+h2 {
+  display: flex;
+
+  align-items: center;
+}
+h2 .iconify {
+  font-size: 2.25rem;
+  margin-left: 8px;
+  color: #dcdcdc;
+}
+
 section {
   background: white;
   display: flex;
@@ -130,9 +203,10 @@ section {
   position: relative;
   flex-direction: column;
   height: 100%;
+  margin-bottom: 2rem;
 }
 .sample-question {
-  margin-top: 7rem;
+  margin-top: 10rem;
 }
 .sample-question div {
   display: flex;
@@ -150,5 +224,45 @@ section {
   background: #e9e9e9;
   padding: 10px 20px;
   border-radius: 40px;
+}
+.infomation {
+  position: relative;
+}
+.infomation span {
+  display: inline-block;
+}
+.infomation .tooltip {
+  position: absolute;
+  top: 0;
+  right: -290px;
+  display: block;
+  background: #e8e8e8;
+  color: black;
+  padding: 12px 16px;
+  font-size: 1rem;
+  width: 280px;
+  font-weight: 400;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.infomation:hover .tooltip {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .infomation span {
+    margin-top: 10px;
+    font-size: 1.75rem;
+  }
+  .infomation .tooltip {
+    top: 36px;
+    right: -50px;
+    padding: 8px 10px;
+    font-size: 0.875rem;
+    width: 200px;
+    height: 50px;
+  }
+  .sample-question {
+    margin-top: 6rem;
+  }
 }
 </style>

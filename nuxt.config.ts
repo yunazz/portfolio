@@ -8,4 +8,7 @@ export default defineNuxtConfig({
     '~/assets/css/common.css',
     '~/assets/css/main.css',
   ],
+  runtimeConfig: {
+    openaiApiKey: process.env.OPENAI_API_KEY,
+  },
 });

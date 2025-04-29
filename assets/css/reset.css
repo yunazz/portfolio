@@ -117,7 +117,7 @@ textarea {
   width: -webkit-fill-available;
   box-sizing: border-box;
   padding: 8px 0 8px 5px;
-  color: var(--color-black);
+  color: #000;
 }
 a,
 button {
@@ -161,5 +161,5 @@ img {
 }
 ::selection {
   background: var(--color-yellow);
-  color: var(--color-black);
+  color: #000;
 }
