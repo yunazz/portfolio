@@ -353,10 +353,10 @@ section.Aboutme {
 }
 .Aboutme .contact {
   display: flex;
-  column-gap: 0.5rem;
+  column-gap: 0.75rem;
 }
 .Aboutme .contact img {
-  width: 34px;
+  width: 32px;
   margin-top: 18px;
 }
 
@@ -493,7 +493,7 @@ section.Interview h2 {
 .chat-wrap {
   width: 900px;
   font-size: var(--body-size-m);
-  margin: 0 auto;
+  margin: 0px auto 7.75rem;
   display: flex;
   flex-direction: column;
 }
@@ -505,6 +505,7 @@ section.Interview h2 {
   padding: 16px 28px;
   border-radius: 14px;
   line-height: 1.5;
+  font-size: 1rem;
 }
 .chat-wrap .chat-a {
   float: left;
@@ -527,7 +528,7 @@ section.Interview h2 {
   display: flex;
   align-items: center;
   width: 900px;
-  margin: 54px auto 20px;
+  margin: 20px auto 20px;
   padding: 0 20px;
   border-radius: 20px;
   height: 44px;

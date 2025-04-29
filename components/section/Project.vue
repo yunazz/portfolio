@@ -380,7 +380,7 @@ const projects = ref([
     subtitle: '온라인 휴대폰 쇼핑몰 풀스택 개발',
     tag: 'FREELANCE',
     githubRepo: '',
-    date: '2022.05 ~ 2022.07',
+    date: '2023.01 ~ 2023.04',
     intro: [
       'Nuxt2 기반 온라인 휴대폰 쇼핑몰 UI/UX 개발',
       'PostgreSQL 데이터 베이스 설계 및 구축',
