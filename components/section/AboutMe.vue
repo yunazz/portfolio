@@ -15,7 +15,6 @@ const openPdf = () => {
           <p class="inter-600 mb-3">PARK YUNA</p>
           <p class="flex-column body-m">
             <span>1995.04.02</span>
-            <span>010-4470-5117</span>
             <span>yunaz0402@gmail.com</span>
             <span>개발 경력: 3년 9개월</span>
           </p>
