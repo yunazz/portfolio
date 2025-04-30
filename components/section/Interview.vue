@@ -16,9 +16,9 @@ const refQuestion = ref([
 ]);
 const sampleQuestion = ref([
   'MBTI 중 E/I 중 어느 쪽인가요? 실제 일할 때는 어떤 스타일인가요?',
-  '공식 문서 먼저 보는 스타일 vs 튜토리얼부터 보는 스타일?',
   '하나를 깊게 파는 편 vs 여러 가지를 얕게 넓게 보는 편?',
   '지금까지 진행한 프로젝트 중 가장 기억에 남는 프로젝트는 무엇인가요?',
+  'AI에 관심을 가지게 된 계기는 무엇인가요?',
 ]);
 
 async function askQuestion(question) {
@@ -182,7 +182,6 @@ async function searchInput() {
 }
 h2 {
   display: flex;
-
   align-items: center;
 }
 h2 .iconify {
@@ -200,6 +199,7 @@ section {
   min-height: 832px;
 }
 .section-inner {
+  min-height: 1200px;
   position: relative;
   flex-direction: column;
   height: 100%;
@@ -224,6 +224,8 @@ section {
   background: #e9e9e9;
   padding: 10px 20px;
   border-radius: 40px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
 }
 .infomation {
   position: relative;

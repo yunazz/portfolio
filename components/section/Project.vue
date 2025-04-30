@@ -506,4 +506,8 @@ function hideDetail() {
   </section>
 </template>
 
-<style lang="css" scoped></style>
+<style lang="css" scoped>
+.section-inner {
+  min-height: 962px;
+}
+</style>
