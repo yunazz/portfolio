@@ -311,11 +311,6 @@ const typeText = computed(() =>
 #ui-joy div {
   height: 350px;
 }
-/* 
-.divider {
-  border-bottom: 1px solid #dfdfdf;
-  margin-top: 1rem;
-} */
 
 .close-btn {
   position: absolute;
@@ -375,6 +370,30 @@ table.tech-stack td:first-child {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    min-width: initial;
+    max-width: initial;
+    width: 95vw;
+    height: 92vh;
+  }
+  .modal-inner {
+    width: 100%;
+  }
+  .project-ui {
+    grid-template-columns: 1fr;
+  }
+  .project-ui div {
+    box-shadow: none;
+    object-fit: cover;
+    width: 100% !important;
+    height: initial !important;
+  }
+  .project-ui div img {
+    border: 1px solid #dadada;
   }
 }
 </style>
