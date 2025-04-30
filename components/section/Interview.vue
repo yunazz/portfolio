@@ -204,7 +204,7 @@ section {
   min-height: 832px;
 }
 .section-inner {
-  min-height: 1200px;
+  min-height: 900px;
   position: relative;
   flex-direction: column;
   height: 100%;
