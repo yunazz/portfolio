@@ -551,6 +551,9 @@ section.Interview h2 {
   padding: 0;
   background: transparent;
 }
+.chat-input input::placeholder {
+  color: #c7c7c7 !important;
+}
 .chat-q p:after {
   content: '';
   position: absolute;

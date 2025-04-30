@@ -111,7 +111,12 @@ async function searchInput() {
 
       <IOB class="chat-input-wrap">
         <div class="chat-input">
-          <input type="text" v-model="inputValue" @keyup.enter="searchInput" />
+          <input
+            type="text"
+            v-model="inputValue"
+            @keyup.enter="searchInput"
+            placeholder="질문을 입력해 주세요."
+          />
           <button class="send-btn" :disabled="loading" @click="searchInput">
             <Icon
               name="eva:arrow-forward-fill"
