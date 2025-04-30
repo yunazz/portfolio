@@ -23,7 +23,7 @@ const projects = ref([
     skillDetail: {
       frontend: 'Nuxt3, Vuetify',
       backend: 'FastAPI, Pydantic, PyMySQL, PyJWT',
-      ai: 'LangChain, Qwen2.5-72B-Instruct, multilingual-e5-large, ',
+      ai: 'LangChain, Qwen2.5-72B-Instruct, multilingual-e5-large',
       db: 'MariaDB, ChromaDB, AWS S3',
       server: 'AWS EC2, Docker, Github Actions (CI/CD), RunPod',
     },
@@ -102,7 +102,7 @@ const projects = ref([
     githubRepo: 'https://github.com/yunazz/SKN06-4th-4Team',
     date: '2024.12.24 ~ 2025.01.20',
     intro: [
-      'Django 풀스텍 웹 서비스',
+      'Django 풀스택 웹 서비스',
       '법제처, 홈텍스 데이터 크롤링 및 PDF 자료 수집',
       'PDF 텍스트 추출 및 문단 기준 chunk 전처리',
       'multilingual-e5 임베딩 및 ChromaDB 벡터 저장',
@@ -487,7 +487,7 @@ function hideDetail() {
                 {{ item.role }}
               </p>
 
-              <p class="body-s fw-600 mt-3">기술 스텍</p>
+              <p class="body-s fw-600 mt-3">기술 스택</p>
               <p class="project-skill body-s">
                 {{ item.skills }}
               </p>

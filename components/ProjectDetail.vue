@@ -51,7 +51,7 @@ const typeText = computed(() =>
         </article>
 
         <article>
-          <h5>🛠️ 기술 스텍</h5>
+          <h5>🛠️ 기술 스택</h5>
           <template v-if="project?.skillDetail">
             <table class="tech-stack">
               <thead>
