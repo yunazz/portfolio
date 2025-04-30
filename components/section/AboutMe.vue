@@ -16,7 +16,6 @@ const openPdf = () => {
           <p class="flex-column body-m">
             <span>1995.04.02</span>
             <span>yunaz0402@gmail.com</span>
-            <span>개발 경력: 3년 9개월</span>
           </p>
         </div>
         <div class="contact">
