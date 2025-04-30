@@ -95,7 +95,7 @@ async function searchInput() {
         </div>
         <IOB>
           <div class="sample-question">
-            <p>질문 추천</p>
+            <p>질문을 클릭해 보세요!</p>
             <div>
               <button
                 v-for="(question, i) in sampleQuestion"
